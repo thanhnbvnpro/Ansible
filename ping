@@ -1,0 +1,5 @@
+- name: SW_14
+  hosts: 10.215.27.21
+  tasks:
+    - name: Ping test
+      ping:
