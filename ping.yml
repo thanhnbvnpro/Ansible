@@ -1,5 +1,6 @@
-- name: SW_1
-  hosts: 10.215.27.5
+- name: Ping test to SW_1
+  hosts: SW_1
+  gather_facts: no
   tasks:
     - name: Ping test
       ping:
