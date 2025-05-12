@@ -1,6 +1,13 @@
-- name: Ping test to SW_1
-  hosts: SW_1
+- name: Kiểm tra kết nối Cisco Switch
+  hosts: cisco_switches
   gather_facts: no
   tasks:
-    - name: Ping test
+    - name: Ping thiết bị (dùng ping nội bộ của Ansible)
       ping:
+
+    - name: Lấy thông tin thiết bị bằng ios_facts
+      ios_facts:
+
+    - name: In hostname thu thập được
+      debug:
+        var: ansible_net_hostname
